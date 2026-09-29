@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sakshi 🎂</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:Arial, sans-serif;
+    background:#080012;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* AURORA BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    inset:-50%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(142,45,226,.30), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(0,183,255,.22), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(255,0,153,.18), transparent 25%);
+    animation:aurora 12s ease-in-out infinite alternate;
+    z-index:-3;
+}
+
+@keyframes aurora{
+    0%{
+        transform:translate(0,0) rotate(0deg) scale(1);
+    }
+    50%{
+        transform:translate(5%,3%) rotate(10deg) scale(1.1);
+    }
+    100%{
+        transform:translate(-4%,-3%) rotate(-8deg) scale(1.05);
+    }
+}
+
+/* STARS */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,.4) 1px, transparent 1px);
+    background-size:90px 90px,140px 140px;
+    background-position:10px 20px,40px 70px;
+    opacity:.25;
+    z-index:-2;
+}
+
+/* MAIN */
+.container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 15px;
+}
+
+.card{
+    width:100%;
+    max-width:600px;
+    padding:35px 25px;
+    text-align:center;
+
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:28px;
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.5),
+        inset 0 0 30px rgba(255,255,255,.03);
+
+    animation:cardIn 1s ease;
+}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* BADGE */
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:50px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+    color:#ddd;
+}
+
+/* HEADINGS */
+h1{
+    font-size:42px;
+    line-height:1.15;
+    margin-bottom:18px;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ffb7ed,
+        #8ed8ff,
+        #fff
+    );
+
+    background-size:300%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    animation:textGlow 5s linear infinite;
+}
+
+@keyframes textGlow{
+    0%{background-position:0%}
+    100%{background-position:300%}
+}
+
+h2{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+p{
+    color:#e8e8e8;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+/* TYPEWRITER */
+.type{
+    min-height:50px;
+    color:#f7dfff;
+    font-size:17px;
+}
+
+/* BUTTON */
+.btn{
+    border:none;
+    outline:none;
+    cursor:pointer;
+
+    padding:15px 24px;
+    margin:8px 4px;
+
+    border-radius:50px;
+
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+
+    background:linear-gradient(
+        135deg,
+        #8e2de2,
+        #4a00e0
+    );
+
+    box-shadow:
+        0 10px 30px rgba(105,35,220,.35);
+
+    transition:.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:
+        0 15px 35px rgba(150,70,255,.5);
+}
+
+.btn:active{
+    transform:scale(.96);
+}
+
+/* MUSIC BUTTON */
+.music-btn{
+    background:linear-gradient(
+        135deg,
+        #ff3cac,
+        #784ba0
+    );
+}
+
+/* HIDDEN */
+.hidden{
+    display:none;
+}
+
+/* PROGRESS */
+.progress{
+    width:100%;
+    height:7px;
+    border-radius:20px;
+    background:rgba(255,255,255,.1);
+    overflow:hidden;
+    margin:25px 0;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        #ff3cac,
+        #784ba0,
+        #2b86c5
+    );
+    transition:width 1s ease;
+}
+
+/* FACTS */
+.facts{
+    display:grid;
+    gap:10px;
+    margin:25px 0;
+}
+
+.fact{
+    padding:14px;
+    text-align:left;
+
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.09);
+
+    border-radius:15px;
+
+    transition:.3s;
+}
+
+.fact:hover{
+    transform:translateX(5px);
+    background:rgba(255,255,255,.1);
+}
+
+/* LETTER */
+.letter{
+    text-align:left;
+    padding:22px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.1);
+
+    line-height:1.8;
+}
+
+.letter p{
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+.footer{
+    margin-top:25px;
+    font-size:12px;
+    color:#aaa;
+}
+
+/* HEARTS */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    animation:heartFly linear forwards;
+    z-index:20;
+}
+
+@keyframes heartFly{
+    0%{
+        transform:translateY(0) scale(.6) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            translateX(var(--move))
+            scale(1.4)
+            rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* SPARKLES */
+.sparkle{
+    position:fixed;
+    width:5px;
+    height:5px;
+    background:white;
+    border-radius:50%;
+    pointer-events:none;
+    box-shadow:0 0 12px white;
+    animation:sparkleAnim 2s ease-out forwards;
+    z-index:10;
+}
+
+@keyframes sparkleAnim{
+    from{
+        transform:scale(.2);
+        opacity:1;
+    }
+    to{
+        transform:scale(2);
+        opacity:0;
+    }
+}
+
+/* CONFETTI */
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:9px;
+    height:14px;
+    z-index:30;
+    pointer-events:none;
+
+    animation:confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall{
+    0%{
+        transform:translateY(-30px) rotate(0deg);
+    }
+
+    100%{
+        transform:
+            translateY(110vh)
+            translateX(var(--x))
+            rotate(720deg);
+    }
+}
+
+/* TOAST */
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+
+    transform:translate(-50%,120px);
+
+    background:rgba(25,10,35,.92);
+    border:1px solid rgba(255,255,255,.15);
+
+    padding:14px 20px;
+    border-radius:50px;
+
+    color:white;
+    font-size:14px;
+
+    opacity:0;
+
+    transition:.4s ease;
+
+    z-index:100;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+    opacity:1;
+}
+
+/* MOBILE */
+@media(max-width:480px){
+
+    .card{
+        padding:28px 18px;
+        border-radius:23px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    p{
+        font-size:14px;
+    }
+
+    .type{
+        font-size:15px;
+    }
+
+    .btn{
+        width:100%;
+        margin:7px 0;
+    }
+
+    .letter{
+        padding:18px;
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="birthdaySong" preload="auto">
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="container">
+
+    <!-- ================= INTRO ================= -->
+    <section class="card" id="opening">
+
+        <div class="badge">
+            A SPECIAL SURPRISE FOR YOU
+        </div>
+
+        <h1>
+            ✨ Hey Sakshi! ✨
+        </h1>
+
+        <p
+            class="type"
+            id="introText">
+        </p>
+
+        <p>
+            Aaj ka din thoda special hai,
+            kyunki aaj tumhara birthday hai. 🎂❤️
+        </p>
+
+        <p>
+            Is chhote se surprise mein tumhare liye
+            kuch special wishes aur kuch cute si baatein hain. ✨
+        </p>
+
+        <button
+            class="btn"
+            onclick="openSurprise()">
+            🎁 Open Your Surprise
+        </button>
+
+        <button
+            class="btn music-btn"
+            id="musicBtn"
+            onclick="toggleMusic()">
+            🎵 Play Birthday Song
+        </button>
+
+        <div class="footer">
+            Made with memories, smiles & care ❤️
+        </div>
+
+    </section>
+
+
+    <!-- ================= SURPRISE ================= -->
+    <section
+        class="card hidden"
+        id="surprise">
+
+        <div class="badge">
+            LEVEL 01 • BIRTHDAY MODE
+        </div>
+
+        <h1>
+            🎂 Happy Birthday Sakshi! 🎂
+        </h1>
+
+        <p>
+            Aaj tumhara special day hai,
+            to thodi si masti aur bahut saari
+            happiness to banti hai. 😊❤️
+        </p>
+
+        <p
+            class="type"
+            id="birthdayText">
+        </p>
+
+        <div class="progress">
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+        </div>
+
+        <div class="facts">
+
+            <div class="fact">
+                ❤️ Sister ho, isliye tumhari jagah
+                hamesha special rahegi.
+            </div>
+
+            <div class="fact">
+                😊 Tumhari smile hamesha
+                happiness lekar aati hai.
+            </div>
+
+            <div class="fact">
+                😂 Tumhare saath thodi si masti ho,
+                to normal day bhi special ban jata hai.
+            </div>
+
+            <div class="fact">
+                ✨ Tumhari caring nature tumhe
+                aur bhi special banati hai.
+            </div>
+
+            <div class="fact">
+                🌸 Tumhari life hamesha
+                happiness se bhari rahe.
+            </div>
+
+        </div>
+
+        <button
+            class="btn"
+            onclick="nextSurprise()">
+            💌 Read Your Birthday Letter
+        </button>
+
+    </section>
+
+
+    <!-- ================= LETTER ================= -->
+    <section
+        class="card hidden"
+        id="final">
+
+        <div class="badge">
+            FINAL LEVEL • FROM YOUR BROTHER
+        </div>
+
+        <h1>
+            💌 Dear Sakshi 💌
+        </h1>
+
+        <div class="letter">
+
+            <p>
+                <b>Happy Birthday Sakshi! 🎂❤️</b>
+            </p>
+
+            <p>
+                Aaj tumhara birthday hai,
+                aur ye din mere liye bhi special hai.
+            </p>
+
+            <p>
+                Tum meri sister ho, aur tumhare saath
+                ki hasi-mazaak, chhoti-chhoti baatein
+                aur beautiful memories hamesha
+                special rahengi. 😊
+            </p>
+
+            <p>
+                Kabhi-kabhi humari chhoti si masti bhi
+                normal moments ko yaadgar bana deti hai. ✨
+            </p>
+
+            <p>
+                Meri wish hai ki tum hamesha khush raho,
+                smile karti raho aur life mein jo bhi
+                chaho, woh achieve karo. ❤️
+            </p>
+
+            <p>
+                Tumhari life mein hamesha happiness,
+                success aur beautiful moments
+                bane rahein. 🌸✨
+            </p>
+
+            <p>
+                Once again,
+                <b>Happy Birthday Sakshi! 🎉🎂</b>
+            </p>
+
+            <p>
+                — Your Brother ❤️
+            </p>
+
+        </div>
+
+        <button
+            class="btn"
+            onclick="celebrate()">
+            🎊 More Celebration
+        </button>
+
+        <button
+            class="btn"
+            onclick="restart()">
+            🔁 Watch Again
+        </button>
+
+    </section>
+
+</div>
+
+
+<!-- TOAST -->
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script>
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+const birthdaySong =
+    document.getElementById("birthdaySong");
+
+let musicPlaying = false;
+
+
+/* =========================================
+   TYPEWRITER
+========================================= */
+
+function typeText(element, text, speed = 35){
+
+    element.innerHTML = "";
+
+    let i = 0;
+
+    const timer = setInterval(function(){
+
+        element.innerHTML += text.charAt(i);
+
+        i++;
+
+        if(i >= text.length){
+            clearInterval(timer);
+        }
+
+    }, speed);
+}
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+function toggleMusic(){
+
+    if(musicPlaying){
+
+        birthdaySong.pause();
+
+        musicPlaying = false;
+
+        document.getElementById("musicBtn").innerHTML =
+            "🎵 Play Birthday Song";
+
+        return;
+    }
+
+    birthdaySong.play()
+    .then(function(){
+
+        musicPlaying = true;
+
+        document.getElementById("musicBtn").innerHTML =
+            "⏸ Pause Birthday Song";
+
+    })
+    .catch(function(){
+
+        showToast(
+            "🎵 birthday.mp3 same folder mein hona chahiye."
+        );
+
+    });
+}
+
+
+/* =========================================
+   OPEN SURPRISE
+========================================= */
+
+function openSurprise(){
+
+    document.getElementById("opening")
+        .classList.add("hidden");
+
+    document.getElementById("surprise")
+        .classList.remove("hidden");
+
+    typeText(
+        document.getElementById("birthdayText"),
+
+        "Meri wish hai ki tumhari life hamesha happiness, success aur beautiful memories se bhari rahe. Tum hamesha smile karti raho aur apne dreams ko achieve karti raho. ❤️✨",
+
+        28
+    );
+
+    document.getElementById("progressBar").style.width =
+        "55%";
+
+    effects();
+
+    /*
+       Browser user ke click ko user gesture maanta hai,
+       isliye yahan music start karne ki koshish kar rahe hain.
+    */
+
+    if(!musicPlaying){
+
+        birthdaySong.play()
+        .then(function(){
+
+            musicPlaying = true;
+
+            document.getElementById("musicBtn").innerHTML =
+                "⏸ Pause Birthday Song";
+
+        })
+        .catch(function(){
+
+            /*
+               Agar browser playback allow na kare,
+               music button se manually start kiya ja sakta hai.
+            */
+
+        });
+
+    }
+
+}
+
+
+/* =========================================
+   NEXT SURPRISE
+========================================= */
+
+function nextSurprise(){
+
+    document.getElementById("surprise")
+        .classList.add("hidden");
+
+    document.getElementById("final")
+        .classList.remove("hidden");
+
+    document.getElementById("progressBar").style.width =
+        "100%";
+
+    effects();
+
+}
+
+
+/* =========================================
+   HEARTS
+========================================= */
+
+function createHearts(){
+
+    const emojis = [
+        "❤️",
+        "💖",
+        "💗",
+        "💕",
+        "💜",
+        "✨"
+    ];
+
+    for(let i = 0; i < 12; i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random() * emojis.length
+                )
+            ];
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+            (14 + Math.random() * 22) + "px";
+
+        heart.style.animationDuration =
+            (4 + Math.random() * 4) + "s";
+
+        heart.style.setProperty(
+            "--move",
+            (Math.random() * 160 - 80) + "px"
+        );
+
+        document.body.appendChild(heart);
+
+        setTimeout(function(){
+
+            heart.remove();
+
+        }, 9000);
+
+    }
+
+}
+
+
+/* =========================================
+   SPARKLES
+========================================= */
+
+function createSparkles(){
+
+    for(let i = 0; i < 18; i++){
+
+        const sparkle =
+            document.createElement("div");
+
+        sparkle.className = "sparkle";
+
+        sparkle.style.left =
+            Math.random() * 100 + "%";
+
+        sparkle.style.top =
+            Math.random() * 100 + "%";
+
+        sparkle.style.animationDelay =
+            Math.random() * 1 + "s";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(function(){
+
+            sparkle.remove();
+
+        }, 2500);
+
+    }
+
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+function createConfetti(){
+
+    const pieces = [
+        "🎉",
+        "🎊",
+        "✨",
+        "💖",
+        "⭐",
+        "🎂"
+    ];
+
+    for(let i = 0; i < 35; i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerHTML =
+            pieces[
+                Math.floor(
+                    Math.random() * pieces.length
+                )
+            ];
+
+        piece.style.left =
+            Math.random() * 100 + "%";
+
+        piece.style.fontSize =
+            (12 + Math.random() * 15) + "px";
+
+        piece.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        piece.style.setProperty(
+            "--x",
+            (Math.random() * 300 - 150) + "px"
+        );
+
+        document.body.appendChild(piece);
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        }, 7000);
+
+    }
+
+}
+
+
+/* =========================================
+   EFFECTS
+========================================= */
+
+function effects(){
+
+    createHearts();
+
+    createSparkles();
+
+    setTimeout(function(){
+        createHearts();
+    }, 1200);
+
+    setTimeout(function(){
+        createSparkles();
+    }, 700);
+
+}
+
+
+/* =========================================
+   CELEBRATION
+========================================= */
+
+function celebrate(){
+
+    createConfetti();
+
+    createHearts();
+
+    createSparkles();
+
+    showToast(
+        "🎉 Happy Birthday Sakshi! Enjoy your special day! ❤️"
+    );
+
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.innerHTML = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    }, 3000);
+
+}
+
+
+/* =========================================
+   RESTART
+========================================= */
+
+function restart(){
+
+    document.getElementById("final")
+        .classList.add("hidden");
+
+    document.getElementById("surprise")
+        .classList.add("hidden");
+
+    document.getElementById("opening")
+        .classList.remove("hidden");
+
+    typeText(
+        document.getElementById("introText"),
+
+        "Ek chhota sa special surprise hai tumhare liye... ❤️",
+
+        45
+    );
+
+    document.getElementById("progressBar").style.width =
+        "0%";
+
+}
+
+
+/* =========================================
+   PAGE LOAD
+========================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        typeText(
+            document.getElementById("introText"),
+
+            "Ek chhota sa special surprise hai tumhare liye... ❤️",
+
+            45
+        );
+
+        setInterval(
+            createSparkles,
+            1800
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
